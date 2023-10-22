@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=Inter:wght@300;400;700;900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Coming+Soon&family=DM+Sans:opsz,wght@9..40,200;9..40,300;9..40,400;9..40,500;9..40,600;9..40,700;9..40,900&family=Inter:wght@300;400;700;900&display=swap");
 * {
@@ -199,11 +200,120 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 }
 
 .brand-section {
+  background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .brand-section .brand-top {
+  display: none;
+}
+@media (min-width: 768px) {
+  .brand-section .brand-top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+  .brand-section .brand-top img {
+    max-width: 20%;
+  }
+}
+@media (min-width: 1200px) {
+  .brand-section .brand-top {
+    display: flex;
+  }
+  .brand-section .brand-top img {
+    max-width: 100%;
+  }
+}
+.brand-section .border-div {
+  margin-top: 75px;
+  width: 1520px;
+  height: 600px;
+  border: 1px solid gray; /* Lägg till en kant runt brand-features */
+}
+.brand-section .border-div .container {
   border: 1px solid black;
+}
+.brand-section .brand-features {
+  margin-top: 80px;
   display: flex;
-  justify-content: space-between;
+}
+.brand-section .brand-features .brand-title {
+  flex: 0 0 460px;
+  margin-right: 50px;
+}
+.brand-section .brand-features .brand-title p {
+  color: #F94D1C;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+}
+.brand-section .brand-features .brand-title h2 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+}
+.brand-section .brand-features .brand-middle {
+  flex: 0 0 307px;
+  margin-right: 50px;
+}
+.brand-section .brand-features .brand-middle h3 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+.brand-section .brand-features .brand-middle p {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 25px;
+  font-style: normal;
+  color: rgba(25, 25, 25, 0.7);
+}
+.brand-section .brand-features .brand-right {
+  flex: 0 0 307px;
+}
+.brand-section .brand-features .brand-right h3 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 22px;
+  font-weight: bold;
+}
+.brand-section .brand-features .brand-right p {
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 25px;
+  font-style: normal;
+  color: rgba(25, 25, 25, 0.7);
+}
+.brand-section .brand-about.container {
+  display: grid; /* Använd CSS Grid för att dela upp utrymmet */
+  grid-template-columns: 1fr 1fr; /* Dela upp utrymmet i två lika stora delar */
+  gap: 20px; /* Lägg till önskat mellanrum mellan elementen */
+  align-items: start; /* Centrera vertikalt */
+  justify-items: center;
+  padding-left: 56px;
+  padding-top: 120px;
+}
+.brand-section .brand-about.container img {
+  width: 100%; /* Sätt bredden till 100% för att fylla hela utrymmet */
+}
+.brand-section .brand-about.container .about-company .play-btn {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  line-height: 48px;
+  text-align: center;
+  border: 2px solid #191919;
+  background-color: #FFFFFF;
+  color: #191919;
+  text-decoration: none;
+  border-radius: 50%;
+  font-size: 8px; /* Justera ikonens storlek efter behov */
 }/*# sourceMappingURL=style.css.map */

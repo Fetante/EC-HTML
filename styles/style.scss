@@ -248,13 +248,149 @@ header{
 }
 
 .brand-section {
+    background-color: #FFFFFF;    
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
     .brand-top {
-        border: 1px solid black;
-        display: flex;
-        justify-content: space-between;
+        // border: 1px solid black;        
+        display: none;
+        
+        @media (min-width: 768px) {
+            display: flex;        
+            justify-content: space-between;
+            margin-top: 50px;
+
+            img {
+                max-width: 20%;
+            }
+        }
+
+        @media (min-width:1200px) {
+            display: flex; 
+            img {
+                max-width: 100%;
+            }                      
+            
+        }
+    } 
+
+    .border-div {
+        margin-top: 75px;
+        width: 1520px;
+        height: 600px;
+        border: 1px solid gray; /* Lägg till en kant runt brand-features */
+
+        .container {
+            border: 1px solid black;
+        }
     }
+
+    .brand-features { 
+        margin-top: 80px;      
+        display: flex; 
+
+        .brand-title {
+            flex: 0 0 460px;
+            margin-right: 50px;
+
+            p {
+                color: #F94D1C;
+                font-size: 18px;
+                font-family: 'Inter', sans-serif;
+                font-weight: 500;
+                line-height: 22px;
+            }
+
+            h2 {
+                color:#191919;
+                font-family: 'DM Sans', sans-serif;
+                font-size: 45px;
+                font-weight: bold;
+            }
+        }
+
+        .brand-middle {
+            flex: 0 0 307px;
+            margin-right: 50px;
+
+            h3 {
+                color:#191919;
+                font-family: 'DM Sans', sans-serif;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            p {
+                font-family: "Inter";
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 25px;
+                font-style: normal;                
+                color: rgba(25,25,25,0.7 );
+            }
+        }
+
+        .brand-right {
+            flex: 0 0 307px;
+            
+            h3 {
+                color:#191919;
+                font-family: 'DM Sans', sans-serif;
+                font-size: 22px;
+                font-weight: bold;
+            }
+            p {
+                font-family: "Inter";
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 25px;
+                font-style: normal;                
+                color: rgba(25,25,25,0.7 );
+            }
+        }
+
+    }
+
+    .brand-about.container {
+        display: grid; /* Använd CSS Grid för att dela upp utrymmet */
+        grid-template-columns: 1fr 1fr; /* Dela upp utrymmet i två lika stora delar */
+        gap: 20px; /* Lägg till önskat mellanrum mellan elementen */
+        align-items: start; /* Centrera vertikalt */
+        justify-items: center;
+        // border: 1px solid black;
+        padding-left: 56px;
+        padding-top: 120px;
+
+        img {
+            width: 100%; /* Sätt bredden till 100% för att fylla hela utrymmet */
+        }
+
+        .about-company {
+
+            .play-btn {
+                display: inline-block;
+                width: 48px;
+                height: 48px;
+                line-height: 48px;
+                text-align: center;
+                border: 2px solid #191919;
+                background-color: #FFFFFF;
+                color: #191919;
+                text-decoration: none;
+                border-radius: 50%;
+                font-size: 8px; /* Justera ikonens storlek efter behov */
+            }
+        }
+    }
+    
+   
+    
+    
+    
+    
+    
+    
 
 }
