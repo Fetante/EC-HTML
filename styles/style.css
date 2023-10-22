@@ -149,51 +149,61 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   transform: translate(calc(50% - 15px));
 }
 
-.showcase {
+.showcase-section {
   background-color: #F0EFE9;
 }
-.showcase .container {
+.showcase-section .container {
   display: flex;
   padding-bottom: 20px;
 }
 @media (min-width: 1200px) {
-  .showcase .container {
+  .showcase-section .container {
     padding-bottom: 0px;
   }
 }
-.showcase .container .showcase-text {
+.showcase-section .container .showcase-text {
   padding-top: 75px;
   text-align: center;
 }
 @media (min-width: 1200px) {
-  .showcase .container .showcase-text {
+  .showcase-section .container .showcase-text {
     padding-top: 125px;
     text-align: left;
   }
 }
-.showcase .container .showcase-text h1 {
+.showcase-section .container .showcase-text h1 {
   font-size: 90px;
   font-weight: 700;
   font-family: "DM Sans", sans-serif;
 }
-.showcase .container .showcase-text p {
+.showcase-section .container .showcase-text p {
   font-size: 20px;
   padding-top: 35px;
   padding-bottom: 20px;
 }
-.showcase .container .showcase-text a {
+.showcase-section .container .showcase-text a {
   margin-top: 20px;
   margin-right: 10px;
 }
-.showcase .container .showcase-text a:hover {
+.showcase-section .container .showcase-text a:hover {
   cursor: pointer;
 }
-.showcase .container .showcase-img {
+.showcase-section .container .showcase-img {
   display: none;
   margin-right: -50px;
 }
 @media (min-width: 1200px) {
-  .showcase .container .showcase-img {
+  .showcase-section .container .showcase-img {
     display: block;
   }
+}
+
+.brand-section {
+  display: flex;
+  flex-direction: column;
+}
+.brand-section .brand-top {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
 }/*# sourceMappingURL=style.css.map */
