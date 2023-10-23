@@ -42,6 +42,34 @@ html, body {
     color: black;
 }
 
+.btn-black{
+    background-color: #191919;
+    color: #FFFFFF;
+}
+
+
+
+.section-title {
+    padding-top: 120px;
+    padding-bottom: 90px;
+
+    p {
+        color: #F94D1C;
+        font-size: 18px;
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        line-height: 22px;
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        color:#191919;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 45px;
+        font-weight: bold;
+    }
+}
+
 header{
     background-color: #F0EFE9;
     padding: 16px;
@@ -278,23 +306,64 @@ header{
     } 
 
     .border-div {
-        margin-top: 75px;
-        width: 1520px;
-        height: 600px;
-        border: 1px solid gray; /* Lägg till en kant runt brand-features */
 
-        .container {
-            border: 1px solid black;
+        @media (min-width: 992px) {
+            margin-top: 75px;        
+            height: 600px;
+            border: 1px solid rgba(25,25,25,0.2 ); /* Lägg till en kant runt brand-features */
+
+        }
+        
+
+        @media (min-width: 1400px) {
+            width: 1320px;
+        }
+
+        @media (min-width: 1550px) {
+            width: 1520px;
+        }
+      
+
+        
+        .container {           
+            padding: 0px;
         }
     }
 
-    .brand-features { 
-        margin-top: 80px;      
-        display: flex; 
+    .brand-features {
 
-        .brand-title {
-            flex: 0 0 460px;
-            margin-right: 50px;
+        
+        display: grid;
+
+        grid-template-areas:    ". features ."
+                                ". business-advise ."
+                                ". startup ."
+                                ". financial-advise. " 
+                                ". risk .";
+
+      
+
+        @media (min-width: 550px) {
+            grid-template-areas:        "features features"
+                                        "business-advise startup"
+                                        "financial-advise risk";
+        }
+
+        @media (min-width: 992px) {
+            grid-template-areas:    "features business-advise startup"
+                                    "features financial-advise risk";
+        }
+
+        @media (min-width: 1200px) {
+                    column-gap: 110px;
+
+        }
+        
+
+        .features {
+            grid-area: features;
+            margin-right: 20px;
+            margin-left: 20px;
 
             p {
                 color: #F94D1C;
@@ -302,56 +371,123 @@ header{
                 font-family: 'Inter', sans-serif;
                 font-weight: 500;
                 line-height: 22px;
+                margin-bottom: 10px;
             }
 
-            h2 {
-                color:#191919;
-                font-family: 'DM Sans', sans-serif;
-                font-size: 45px;
-                font-weight: bold;
+            a {
+                display: block;
+                margin-top: 48px;
+                text-align: center;
+                
             }
+        }  
+
+        .business-advise {
+            grid-area: business-advise;
+            max-width: 275px;            
+            align-self: center;
+            justify-self: center;
+
+            i {
+                font-size: 30px;
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+
+            @media (min-width: 550px) {
+                padding-left: 45px;
+            }
+
+            @media (min-width: 992px) {
+                padding-top: 130px;
+                padding-left: 0;
+            }            
+           
         }
 
-        .brand-middle {
-            flex: 0 0 307px;
-            margin-right: 50px;
-
-            h3 {
-                color:#191919;
-                font-family: 'DM Sans', sans-serif;
-                font-size: 22px;
-                font-weight: bold;
-            }
-            p {
-                font-family: "Inter";
-                font-size: 16px;
-                font-weight: normal;
-                line-height: 25px;
-                font-style: normal;                
-                color: rgba(25,25,25,0.7 );
-            }
-        }
-
-        .brand-right {
-            flex: 0 0 307px;
+        .financial-advise {
+            grid-area: financial-advise;
+            max-width: 275px;
+            margin-top: 31px;            
+            align-self: center;
+            justify-self: center;
             
-            h3 {
-                color:#191919;
-                font-family: 'DM Sans', sans-serif;
-                font-size: 22px;
-                font-weight: bold;
+
+            i {
+                font-size: 30px;
+                font-weight: 400;
+                margin-bottom: 25px;
             }
-            p {
-                font-family: "Inter";
-                font-size: 16px;
-                font-weight: normal;
-                line-height: 25px;
-                font-style: normal;                
-                color: rgba(25,25,25,0.7 );
+
+            @media (min-width: 550px) {
+                padding-left: 45px;
+            }
+
+            @media (min-width: 992px) {                
+                padding-left: 0px;
+            }   
+        }
+
+        .risk {
+            grid-area: risk;
+            margin-top: 31px;            
+            max-width: 275px;
+            align-self: center;
+            justify-self: center;
+
+            i {
+                font-size: 30px;
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+
+            @media (min-width: 992px) {                
+                padding-right: 50px;
+                padding-left: 0px;
             }
         }
+
+        .startup {
+            grid-area: startup;
+            max-width: 275px;
+           
+            align-self: center;
+            justify-self: center;
+
+            i {
+                font-size: 30px;
+                font-weight: 400;
+                margin-bottom: 25px;
+            }
+
+            @media (min-width: 992px) {
+                padding-top: 130px;
+                padding-right: 50px;
+                padding-left: 0px;
+            }
+        }
+
+        h3 {
+            color:#191919;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 22px;
+            font-weight: bold;
+        }
+        
+        p {
+            font-family: "Inter";
+            font-size: 16px;
+            font-weight: normal;
+            line-height: 25px;
+            font-style: normal;                
+            color: rgba(25,25,25,0.7 );
+        }
+
+
 
     }
+
+
 
     .brand-about.container {
         display: grid; /* Använd CSS Grid för att dela upp utrymmet */
@@ -362,6 +498,14 @@ header{
         // border: 1px solid black;
         padding-left: 56px;
         padding-top: 120px;
+
+        .section-title {
+            padding-top: 0px;
+           
+            .no-title {
+                color:#191919;
+            }
+        }
 
         img {
             width: 100%; /* Sätt bredden till 100% för att fylla hela utrymmet */
@@ -385,12 +529,151 @@ header{
         }
     }
     
-   
-    
-    
-    
-    
-    
-    
 
+.brand-about.container .section-title {
+    padding-top: 0px;
+}
+    
+}
+
+.project-and-case-section {
+    
+    .container {
+
+        .section-title {
+            text-align: center;
+        }
+
+        .project-and-cases {
+            display: grid; /* Använd CSS Grid för att dela upp utrymmet */
+            grid-template-columns: 1fr;
+            row-gap: 50px;
+            column-gap: 30px;
+
+            @media (min-width: 768px) {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+
+
+            article {
+                display: grid;
+                grid-template-columns: 1fr;
+                grid-template-rows: auto 1fr auto;
+
+                img {
+                    width: 100%;
+
+                    // Sätt höjden eftersom bildena har olika dimensioner
+                    @media (min-width: 768px){
+                        height: 220px;
+                    }
+
+                    @media (min-width: 1000px){
+                        height: 300px;
+                    }
+
+                    @media (min-width: 1200px){
+                        height: 360px;
+                    }
+                    
+                    @media (min-width: 1400px){
+                        height: 311px;
+                    }                    
+                }
+
+                h3 {
+                    font-family: 'DM Sans', sans-serif;
+                    font-weight: 700;
+                    font-size: 22px;
+                    padding-top: 35px;
+                    padding-bottom: 16px;
+                    border-bottom: 1px solid #DAD9D3;
+                }
+
+                a {
+                    display: block;
+                    text-align: right;
+                    color: #191919;
+                    text-decoration: none;
+                    font-size: 14px;
+                    font-weight: 500;
+                    font-family: 'Inter', sans-serif;
+                    margin-right: 15px;
+                    margin-top: 25px;
+
+                    i {
+                        margin-left: 5px;
+                    }
+
+                }
+            }
+
+         
+
+        }
+
+        .all-projects {
+            padding-top: 100px;
+            text-align:  center;
+        }
+    }
+}
+
+
+.our-services {
+    background-color: #F0EFE9;
+
+    .container {
+
+        .section-title {
+
+        }
+
+        .card-content {
+            display: flex;
+            justify-content: space-between;
+
+            .card {
+                max-width: 308px;
+                height: 333px;                
+                background-color: #FFFFFF;
+                padding: 25px;
+
+                p {
+                    font-size: 16px;
+                    font-family: 'Inter', sans-serif;
+                    font-weight: 500;
+                    line-height: 28px;
+                }
+
+                h3 {
+                    font-size: 22px;
+                    padding-bottom: 12px;
+                }
+
+                .arrow-link {
+                    display: flex;
+                    justify-content: flex-end;
+                
+                    a.btn-round {
+                        width: 56px; /* Justera storleken efter behov */
+                        height: 56px;
+                        display: block;
+                        border-radius: 50%;
+                        line-height: 56px;
+                        text-align: center;
+                        border: 1px solid black;
+                    }
+                }
+            }
+        }
+
+        .btn-services {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    }
 }

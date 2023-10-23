@@ -40,6 +40,30 @@ html, body {
   color: black;
 }
 
+.btn-black {
+  background-color: #191919;
+  color: #FFFFFF;
+}
+
+.section-title {
+  padding-top: 120px;
+  padding-bottom: 90px;
+}
+.section-title p {
+  color: #F94D1C;
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 22px;
+  margin-bottom: 10px;
+}
+.section-title h2 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+}
+
 header {
   background-color: #F0EFE9;
   padding: 16px;
@@ -227,64 +251,151 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
     max-width: 100%;
   }
 }
-.brand-section .border-div {
-  margin-top: 75px;
-  width: 1520px;
-  height: 600px;
-  border: 1px solid gray; /* Lägg till en kant runt brand-features */
+@media (min-width: 992px) {
+  .brand-section .border-div {
+    margin-top: 75px;
+    height: 600px;
+    border: 1px solid rgba(25, 25, 25, 0.2); /* Lägg till en kant runt brand-features */
+  }
+}
+@media (min-width: 1400px) {
+  .brand-section .border-div {
+    width: 1320px;
+  }
+}
+@media (min-width: 1550px) {
+  .brand-section .border-div {
+    width: 1520px;
+  }
 }
 .brand-section .border-div .container {
-  border: 1px solid black;
+  padding: 0px;
 }
 .brand-section .brand-features {
-  margin-top: 80px;
-  display: flex;
+  display: grid;
+  grid-template-areas: ". features ." ". business-advise ." ". startup ." ". financial-advise. " ". risk .";
 }
-.brand-section .brand-features .brand-title {
-  flex: 0 0 460px;
-  margin-right: 50px;
+@media (min-width: 550px) {
+  .brand-section .brand-features {
+    grid-template-areas: "features features" "business-advise startup" "financial-advise risk";
+  }
 }
-.brand-section .brand-features .brand-title p {
+@media (min-width: 992px) {
+  .brand-section .brand-features {
+    grid-template-areas: "features business-advise startup" "features financial-advise risk";
+  }
+}
+@media (min-width: 1200px) {
+  .brand-section .brand-features {
+    -moz-column-gap: 110px;
+         column-gap: 110px;
+  }
+}
+.brand-section .brand-features .features {
+  grid-area: features;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+.brand-section .brand-features .features p {
   color: #F94D1C;
   font-size: 18px;
   font-family: "Inter", sans-serif;
   font-weight: 500;
   line-height: 22px;
+  margin-bottom: 10px;
 }
-.brand-section .brand-features .brand-title h2 {
-  color: #191919;
-  font-family: "DM Sans", sans-serif;
-  font-size: 45px;
-  font-weight: bold;
+.brand-section .brand-features .features a {
+  display: block;
+  margin-top: 48px;
+  text-align: center;
 }
-.brand-section .brand-features .brand-middle {
-  flex: 0 0 307px;
-  margin-right: 50px;
+.brand-section .brand-features .business-advise {
+  grid-area: business-advise;
+  max-width: 275px;
+  align-self: center;
+  justify-self: center;
 }
-.brand-section .brand-features .brand-middle h3 {
+.brand-section .brand-features .business-advise i {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+@media (min-width: 550px) {
+  .brand-section .brand-features .business-advise {
+    padding-left: 45px;
+  }
+}
+@media (min-width: 992px) {
+  .brand-section .brand-features .business-advise {
+    padding-top: 130px;
+    padding-left: 0;
+  }
+}
+.brand-section .brand-features .financial-advise {
+  grid-area: financial-advise;
+  max-width: 275px;
+  margin-top: 31px;
+  align-self: center;
+  justify-self: center;
+}
+.brand-section .brand-features .financial-advise i {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+@media (min-width: 550px) {
+  .brand-section .brand-features .financial-advise {
+    padding-left: 45px;
+  }
+}
+@media (min-width: 992px) {
+  .brand-section .brand-features .financial-advise {
+    padding-left: 0px;
+  }
+}
+.brand-section .brand-features .risk {
+  grid-area: risk;
+  margin-top: 31px;
+  max-width: 275px;
+  align-self: center;
+  justify-self: center;
+}
+.brand-section .brand-features .risk i {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+@media (min-width: 992px) {
+  .brand-section .brand-features .risk {
+    padding-right: 50px;
+    padding-left: 0px;
+  }
+}
+.brand-section .brand-features .startup {
+  grid-area: startup;
+  max-width: 275px;
+  align-self: center;
+  justify-self: center;
+}
+.brand-section .brand-features .startup i {
+  font-size: 30px;
+  font-weight: 400;
+  margin-bottom: 25px;
+}
+@media (min-width: 992px) {
+  .brand-section .brand-features .startup {
+    padding-top: 130px;
+    padding-right: 50px;
+    padding-left: 0px;
+  }
+}
+.brand-section .brand-features h3 {
   color: #191919;
   font-family: "DM Sans", sans-serif;
   font-size: 22px;
   font-weight: bold;
 }
-.brand-section .brand-features .brand-middle p {
-  font-family: "Inter";
-  font-size: 16px;
-  font-weight: normal;
-  line-height: 25px;
-  font-style: normal;
-  color: rgba(25, 25, 25, 0.7);
-}
-.brand-section .brand-features .brand-right {
-  flex: 0 0 307px;
-}
-.brand-section .brand-features .brand-right h3 {
-  color: #191919;
-  font-family: "DM Sans", sans-serif;
-  font-size: 22px;
-  font-weight: bold;
-}
-.brand-section .brand-features .brand-right p {
+.brand-section .brand-features p {
   font-family: "Inter";
   font-size: 16px;
   font-weight: normal;
@@ -301,6 +412,12 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   padding-left: 56px;
   padding-top: 120px;
 }
+.brand-section .brand-about.container .section-title {
+  padding-top: 0px;
+}
+.brand-section .brand-about.container .section-title .no-title {
+  color: #191919;
+}
 .brand-section .brand-about.container img {
   width: 100%; /* Sätt bredden till 100% för att fylla hela utrymmet */
 }
@@ -316,4 +433,120 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   text-decoration: none;
   border-radius: 50%;
   font-size: 8px; /* Justera ikonens storlek efter behov */
+}
+.brand-section .brand-about.container .section-title {
+  padding-top: 0px;
+}
+
+.project-and-case-section .container .section-title {
+  text-align: center;
+}
+.project-and-case-section .container .project-and-cases {
+  display: grid; /* Använd CSS Grid för att dela upp utrymmet */
+  grid-template-columns: 1fr;
+  row-gap: 50px;
+  -moz-column-gap: 30px;
+       column-gap: 30px;
+}
+@media (min-width: 768px) {
+  .project-and-case-section .container .project-and-cases {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.project-and-case-section .container .project-and-cases article {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+.project-and-case-section .container .project-and-cases article img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .project-and-case-section .container .project-and-cases article img {
+    height: 220px;
+  }
+}
+@media (min-width: 1000px) {
+  .project-and-case-section .container .project-and-cases article img {
+    height: 300px;
+  }
+}
+@media (min-width: 1200px) {
+  .project-and-case-section .container .project-and-cases article img {
+    height: 360px;
+  }
+}
+@media (min-width: 1400px) {
+  .project-and-case-section .container .project-and-cases article img {
+    height: 311px;
+  }
+}
+.project-and-case-section .container .project-and-cases article h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 700;
+  font-size: 22px;
+  padding-top: 35px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #DAD9D3;
+}
+.project-and-case-section .container .project-and-cases article a {
+  display: block;
+  text-align: right;
+  color: #191919;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  margin-right: 15px;
+  margin-top: 25px;
+}
+.project-and-case-section .container .project-and-cases article a i {
+  margin-left: 5px;
+}
+.project-and-case-section .container .all-projects {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.our-services {
+  background-color: #F0EFE9;
+}
+.our-services .container .card-content {
+  display: flex;
+  justify-content: space-between;
+}
+.our-services .container .card-content .card {
+  max-width: 308px;
+  height: 333px;
+  background-color: #FFFFFF;
+  padding: 25px;
+}
+.our-services .container .card-content .card p {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 28px;
+}
+.our-services .container .card-content .card h3 {
+  font-size: 22px;
+  padding-bottom: 12px;
+}
+.our-services .container .card-content .card .arrow-link {
+  display: flex;
+  justify-content: flex-end;
+}
+.our-services .container .card-content .card .arrow-link a.btn-round {
+  width: 56px; /* Justera storleken efter behov */
+  height: 56px;
+  display: block;
+  border-radius: 50%;
+  line-height: 56px;
+  text-align: center;
+  border: 1px solid black;
+}
+.our-services .container .btn-services {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }/*# sourceMappingURL=style.css.map */
