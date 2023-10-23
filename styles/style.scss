@@ -547,8 +547,23 @@ header{
         }
 
         .card-content {
-            display: flex;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 1fr;
+           justify-items: center;
+            row-gap: 30px;
+
+            @media (min-width:768px) {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            @media (min-width:1000px) {
+                row-gap: 80px;
+            }
+
+            @media (min-width: 1200px) {
+                display: flex;
+                justify-content: space-between;
+            }
 
             .card {
                 max-width: 308px;
@@ -607,15 +622,28 @@ header{
     
     .container {
         display: flex;
-
+        flex-direction: column;
         padding-bottom: 20px;
+
+        @media (min-width: 1000px) {
+            flex-direction: row;
+        }
+
+        
         .section-title {
             // border: 1px solid black;
             padding-top: 61px;
             
+            
             h2 {
-                padding-right: 185px;
+                padding-right: 50px;
+
+                @media (min-width: 1400px) {
+                    padding-right: 228px;
+                }
             }
+
+            
 
             .choose-grid {
                 padding-top: 30px;
@@ -625,7 +653,7 @@ header{
                 grid-template-columns: 1fr 15fr;
                 row-gap: 30px;
                 
-
+                          
                 i {
                 
                 }
@@ -634,15 +662,38 @@ header{
         }
 
         .choose-img-container {
-            padding-top: 88px;
+            
             // border: 1px solid black;
+            width: 100%;
+            
+           
         }
 
         img {
-            // width: 100%
+                width: 100%;
+            
+            @media (min-width: 768px) {
+                width: 645px;
+            }            
+
+            @media (min-width: 1000px) {
+                padding-top: 200px;
+                width: 110%;
+                height: 80%;
+            }
+                                   
+
+            @media (min-width: 1200px) {
+                max-width: 645px;                
+                height: 505px;
+                padding-top: 88px;
+            }
+        
         }
     }
 }
+
+
 
 
 .project-and-case-section {

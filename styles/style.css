@@ -442,8 +442,26 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   background-color: #F0EFE9;
 }
 .service-section .container .card-content {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  row-gap: 30px;
+}
+@media (min-width: 768px) {
+  .service-section .container .card-content {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1000px) {
+  .service-section .container .card-content {
+    row-gap: 80px;
+  }
+}
+@media (min-width: 1200px) {
+  .service-section .container .card-content {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 .service-section .container .card-content .card {
   max-width: 308px;
@@ -491,13 +509,24 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 
 .choose-section .container {
   display: flex;
+  flex-direction: column;
   padding-bottom: 20px;
+}
+@media (min-width: 1000px) {
+  .choose-section .container {
+    flex-direction: row;
+  }
 }
 .choose-section .container .section-title {
   padding-top: 61px;
 }
 .choose-section .container .section-title h2 {
-  padding-right: 185px;
+  padding-right: 50px;
+}
+@media (min-width: 1400px) {
+  .choose-section .container .section-title h2 {
+    padding-right: 228px;
+  }
 }
 .choose-section .container .section-title .choose-grid {
   padding-top: 30px;
@@ -507,8 +536,31 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   row-gap: 30px;
 }
 .choose-section .container .choose-img-container {
-  padding-top: 88px;
+  width: 100%;
 }
+.choose-section .container img {
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .choose-section .container img {
+    width: 645px;
+  }
+}
+@media (min-width: 1000px) {
+  .choose-section .container img {
+    padding-top: 200px;
+    width: 110%;
+    height: 80%;
+  }
+}
+@media (min-width: 1200px) {
+  .choose-section .container img {
+    max-width: 645px;
+    height: 505px;
+    padding-top: 88px;
+  }
+}
+
 .project-and-case-section .container .section-title {
   text-align: center;
 }
