@@ -438,6 +438,77 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   padding-top: 0px;
 }
 
+.service-section {
+  background-color: #F0EFE9;
+}
+.service-section .container .card-content {
+  display: flex;
+  justify-content: space-between;
+}
+.service-section .container .card-content .card {
+  max-width: 308px;
+  height: 333px;
+  background-color: #FFFFFF;
+  padding: 25px;
+  padding-bottom: 35px;
+}
+.service-section .container .card-content .card p {
+  font-size: 16px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  line-height: 28px;
+  padding-bottom: 20px;
+  color: #A2A2A2;
+}
+.service-section .container .card-content .card h3 {
+  font-size: 22px;
+  padding-bottom: 12px;
+}
+.service-section .container .card-content .card .arrow-link {
+  display: flex;
+  justify-content: flex-end;
+}
+.service-section .container .card-content .card .arrow-link a.btn-round {
+  width: 56px; /* Justera storleken efter behov */
+  height: 56px;
+  display: block;
+  border-radius: 50%;
+  line-height: 56px;
+  text-align: center;
+  border: 1px solid black;
+  background-color: #191919;
+}
+.service-section .container .card-content .card .arrow-link a.btn-round i {
+  color: #F2F2F2;
+  font-size: 25px;
+}
+.service-section .container .btn-services {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.choose-section .container {
+  display: flex;
+  padding-bottom: 20px;
+}
+.choose-section .container .section-title {
+  padding-top: 61px;
+}
+.choose-section .container .section-title h2 {
+  padding-right: 185px;
+}
+.choose-section .container .section-title .choose-grid {
+  padding-top: 30px;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 15fr;
+  row-gap: 30px;
+}
+.choose-section .container .choose-img-container {
+  padding-top: 88px;
+}
 .project-and-case-section .container .section-title {
   text-align: center;
 }
@@ -506,47 +577,4 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 .project-and-case-section .container .all-projects {
   padding-top: 100px;
   text-align: center;
-}
-
-.our-services {
-  background-color: #F0EFE9;
-}
-.our-services .container .card-content {
-  display: flex;
-  justify-content: space-between;
-}
-.our-services .container .card-content .card {
-  max-width: 308px;
-  height: 333px;
-  background-color: #FFFFFF;
-  padding: 25px;
-}
-.our-services .container .card-content .card p {
-  font-size: 16px;
-  font-family: "Inter", sans-serif;
-  font-weight: 500;
-  line-height: 28px;
-}
-.our-services .container .card-content .card h3 {
-  font-size: 22px;
-  padding-bottom: 12px;
-}
-.our-services .container .card-content .card .arrow-link {
-  display: flex;
-  justify-content: flex-end;
-}
-.our-services .container .card-content .card .arrow-link a.btn-round {
-  width: 56px; /* Justera storleken efter behov */
-  height: 56px;
-  display: block;
-  border-radius: 50%;
-  line-height: 56px;
-  text-align: center;
-  border: 1px solid black;
-}
-.our-services .container .btn-services {
-  display: flex;
-  justify-content: flex-end;
-  padding-top: 20px;
-  padding-bottom: 20px;
 }/*# sourceMappingURL=style.css.map */
