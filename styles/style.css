@@ -404,35 +404,64 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   color: rgba(25, 25, 25, 0.7);
 }
 .brand-section .brand-about.container {
-  display: grid; /* Använd CSS Grid för att dela upp utrymmet */
-  grid-template-columns: 1fr 1fr; /* Dela upp utrymmet i två lika stora delar */
-  gap: 20px; /* Lägg till önskat mellanrum mellan elementen */
-  align-items: start; /* Centrera vertikalt */
-  justify-items: center;
+  display: flex; /* Använd CSS Grid för att dela upp utrymmet */
   padding-left: 56px;
   padding-top: 120px;
 }
-.brand-section .brand-about.container .section-title {
-  padding-top: 0px;
+@media (min-width: 1200px) {
+  .brand-section .brand-about.container .section-title {
+    flex: 1;
+    padding-top: 0px;
+    padding-left: 140px;
+  }
+}
+.brand-section .brand-about.container .section-title h2 {
+  padding-bottom: 30px;
 }
 .brand-section .brand-about.container .section-title .no-title {
-  color: #191919;
+  color: #A2A2A2;
+  padding-bottom: 45px;
+}
+.brand-section .brand-about.container .section-title a {
+  margin-right: 35px;
+}
+.brand-section .brand-about.container .founder-img {
+  display: none;
+}
+@media (min-width: 1200px) {
+  .brand-section .brand-about.container .founder-img {
+    display: contents;
+    flex: 1;
+    width: 100%; /* Säkerställ att bilden tar upp hela bredden av förälderelementet */
+    max-height: 600px; /* Ange höjden på diven */
+  }
 }
 .brand-section .brand-about.container img {
-  width: 100%; /* Sätt bredden till 100% för att fylla hela utrymmet */
+  width: 100%; /* Säkerställ att bilden tar upp hela bredden av diven */
+  max-width: 505px;
+  height: 100%; /* Säkerställ att bilden tar upp hela höjden av diven */
+  -o-object-fit: cover;
+     object-fit: cover; /* Fyll ut bilden utan att förvränga den */
 }
 .brand-section .brand-about.container .about-company .play-btn {
-  display: inline-block;
+  display: block;
   width: 48px;
   height: 48px;
   line-height: 48px;
   text-align: center;
-  border: 2px solid #191919;
+  border: 1px solid #191919;
   background-color: #FFFFFF;
   color: #191919;
   text-decoration: none;
   border-radius: 50%;
   font-size: 8px; /* Justera ikonens storlek efter behov */
+  margin-right: 10px;
+  margin-top: 35px;
+}
+@media (min-width: 416px) {
+  .brand-section .brand-about.container .about-company .play-btn {
+    display: inline-block;
+  }
 }
 .brand-section .brand-about.container .section-title {
   padding-top: 0px;
@@ -532,8 +561,26 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   padding-top: 30px;
   display: grid;
   align-items: center;
-  grid-template-columns: 1fr 15fr;
+  grid-template-columns: 1fr 13fr;
   row-gap: 30px;
+  -moz-column-gap: 15px;
+       column-gap: 15px;
+}
+.choose-section .container .section-title .choose-grid h3 {
+  font-family: "DM Sans", sans-serif;
+  font-weight: bold;
+  font-size: 22px;
+}
+.choose-section .container .section-title .choose-grid p {
+  color: #A1A1A1;
+  font-size: 16px;
+}
+.choose-section .container .section-title .choose-grid i {
+  border: 1px solid rgba(25, 25, 25, 0.2);
+  border-radius: 50%; /* Skapar en rund border genom att sätta värdet till 50% */
+  padding: 10px; /* Justera padding efter behov */
+  font-size: 25px;
+  padding: 15px;
 }
 .choose-section .container .choose-img-container {
   width: 100%;
@@ -555,9 +602,9 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 }
 @media (min-width: 1200px) {
   .choose-section .container img {
-    max-width: 645px;
+    width: 645px;
     height: 505px;
-    padding-top: 88px;
+    padding-top: 120px;
   }
 }
 
@@ -629,4 +676,250 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 .project-and-case-section .container .all-projects {
   padding-top: 100px;
   text-align: center;
+  padding-bottom: 100px;
+}
+
+.meet-team-section {
+  background-color: #EDCF87;
+  padding-bottom: 100px;
+}
+.meet-team-section .container .section-title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (min-width: 992px) {
+  .meet-team-section .container .section-title-wrapper {
+    flex-direction: row;
+  }
+}
+.meet-team-section .container .section-title-wrapper .section-title {
+  padding-bottom: 15px;
+}
+@media (min-width: 992px) {
+  .meet-team-section .container .section-title-wrapper .section-title {
+    padding-bottom: 120px;
+  }
+}
+.meet-team-section .container .section-title-wrapper a {
+  display: block;
+  margin-bottom: 50px;
+}
+@media (min-width: 992px) {
+  .meet-team-section .container .section-title-wrapper a {
+    margin-top: 50px;
+  }
+}
+.meet-team-section .container .team-cards {
+  display: grid;
+  gap: 80px;
+  justify-content: center;
+  grid-template-areas: "kristine" "mar" "kimberly" "justin";
+}
+@media (min-width: 700px) {
+  .meet-team-section .container .team-cards {
+    grid-template-areas: ". kristine mar ." ". kimberly justin .";
+  }
+}
+@media (min-width: 1400px) {
+  .meet-team-section .container .team-cards {
+    grid-template-areas: "kristine mar kimberly justin";
+    gap: 30px;
+  }
+}
+.meet-team-section .container .team-cards .kristine {
+  grid-area: kristine;
+}
+.meet-team-section .container .team-cards .mark {
+  grid-area: mar;
+}
+.meet-team-section .container .team-cards .kimberly {
+  grid-area: kimberly;
+}
+.meet-team-section .container .team-cards .justin {
+  grid-area: justin;
+}
+.meet-team-section .container .team-cards .team-card {
+  width: 308px;
+  height: 420px;
+}
+.meet-team-section .container .team-cards .team-card img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.meet-team-section .testimonial {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 200px;
+}
+.meet-team-section .testimonial .testimonial-wrapper {
+  background-color: #FFFFFF;
+  width: 1520px;
+  height: 1100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+@media (min-width: 800px) {
+  .meet-team-section .testimonial .testimonial-wrapper {
+    height: 887px;
+  }
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .section-title {
+  text-align: center;
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  overflow-x: auto;
+  -moz-column-gap: 80px;
+       column-gap: 80px;
+  row-gap: 100px;
+}
+@media (min-width: 800px) {
+  .meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 992px) {
+  .meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    -moz-column-gap: 15px;
+         column-gap: 15px;
+    overflow-x: auto;
+  }
+}
+@media (min-width: 1400px) {
+  .meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards {
+    -moz-column-gap: 130px;
+         column-gap: 130px;
+  }
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards .jack {
+  display: none;
+}
+@media (min-width: 992px) {
+  .meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards .jack {
+    display: inline;
+  }
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards p {
+  font-size: 18px;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 34px;
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards .info-wrapper {
+  display: flex;
+  padding-top: 25px;
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards .info-wrapper .testimonial-info {
+  padding-left: 10px;
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards .info-wrapper .testimonial-info p {
+  color: #F94D1C;
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards .testimonial-image {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards .testimonial-image h4 {
+  margin-right: 0px;
+  white-space: nowrap;
+}
+.meet-team-section .testimonial .testimonial-wrapper .container .testimonial-cards img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.meet-team-section .testimonial .testimonial-wrapper .all-reviews {
+  margin-top: 70px;
+}
+@media (min-width: 800px) {
+  .meet-team-section .testimonial .testimonial-wrapper .all-reviews {
+    margin-top: 110px;
+  }
+}
+
+.news-section {
+  background-color: #FFFFFF;
+  height: 852px;
+}
+.news-section .container .title-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 120px;
+  padding-bottom: 40px;
+}
+.news-section .container .section-title {
+  padding: 0;
+}
+.news-section .container .business-card-wrapper {
+  display: flex;
+  overflow: scroll;
+  padding-bottom: 50px;
+}
+.news-section .container .business-card-wrapper .business-card {
+  flex: 0 0 auto;
+  width: 420px;
+  height: 460px;
+  margin: 0 20px;
+  overflow: hidden;
+}
+.news-section .container .business-card-wrapper .business-card img {
+  width: 100%;
+  height: 230px;
+}
+
+.signup-section {
+  background-color: #F0EFE9;
+  padding-top: 110px;
+  padding-bottom: 110px;
+}
+.signup-section .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.signup-section .container h2 {
+  color: #191919;
+  font-family: "DM Sans", sans-serif;
+  font-size: 45px;
+  font-weight: bold;
+}
+.signup-section .container input {
+  background: #ffffff;
+  margin-right: 16px;
+  width: 308px;
+  height: 56px;
+  border-radius: 40px;
+  border: none;
+  padding-left: 15px;
+  outline: none;
+  font-family: "Inter";
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 16px;
+  font-style: normal;
+  text-align: left;
+  color: rgba(25, 25, 25, 0.5);
+}
+.signup-section .container a {
+  display: inline-block;
+  width: 171px;
+}
+
+footer {
+  background-color: #0E1021;
+  height: 513px;
 }/*# sourceMappingURL=style.css.map */
