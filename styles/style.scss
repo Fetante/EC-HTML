@@ -70,6 +70,28 @@ html, body {
     }
 }
 
+.social-media {
+
+    display: none;
+
+    @media (min-width: 1200px) {
+        flex: end;
+        display: flex;
+        align-items: center;
+    }
+
+
+    a {
+        margin-left: 18px;
+        color: #191919;
+        font-size: 1.3rem;
+
+        &:hover {
+            color: #666666;
+        }
+    }
+}
+
 header{
     background-color: #F0EFE9;
     padding: 16px;
@@ -143,27 +165,7 @@ header{
                 }
             }
 
-            .social-media {
-
-                display: none;
-
-                @media (min-width: 1200px) {
-                    flex: end;
-                    display: flex;
-                    align-items: center;
-                }
-
-    
-                a {
-                    margin-left: 10px;
-                    color: #191919;
-                    font-size: 1.3rem;
-
-                    &:hover {
-                        color: #666666;
-                    }
-                }
-            }
+            
         }
     }
  
@@ -1052,22 +1054,44 @@ header{
 
         .title-wrapper {
             display: flex;
+            flex-direction: column;
             justify-content: space-between;
             align-items: center;
            
-            padding-top: 120px;
-            padding-bottom: 40px; 
+            padding-top: 40px;
+            padding-bottom: 60px; 
+
+
+            @media (min-width: 992px) {
+                flex-direction: row;
+                padding-top: 120px;
+                padding-bottom: 40px;
+            }
+
+            .section-title {
+
+                h2 {
+                    padding-bottom: 40px;
+                }
+                
+               
+                padding: 0;
+
+                
+            }
            
         }
 
-        .section-title {
-            padding: 0;
-        }
+      
 
         .business-card-wrapper {
             display: flex;
-            overflow: scroll;
+            overflow-x: scroll;
             padding-bottom: 50px;
+
+            @media (min-width: 1400px) {
+                overflow-x: hidden;
+            } 
 
             .business-card {
                 // min-width: 350px;
@@ -1075,7 +1099,7 @@ header{
                 width: 420px;
                 height: 460px;
                 margin: 0 20px;
-                overflow: hidden;
+                
 
                 img {
                     width: 100%;
@@ -1094,49 +1118,62 @@ header{
     background-color: #F0EFE9;
     padding-top: 110px;
     padding-bottom: 110px;
+
     .container {
-
-       
-
         display: flex;
         justify-content: space-between;
         align-items: center;
+        flex-direction: column;
+
+        @media (min-width: 1200px) {
+            flex-direction: row;
+        }
 
         h2 {
             color:#191919;
             font-family: 'DM Sans', sans-serif;
             font-size: 45px;
-            font-weight: bold;
+            font-weight: bold;           
         }
 
         p {
 
         }
 
-        input {
-            background: #ffffff;
-            margin-right: 16px;
+        .subscribe {
+            margin-top: 30px;
             
-            width: 308px;
-            height: 56px;
-            border-radius: 40px;
-            border: none;
-            padding-left: 15px;
+            @media (min-width: 1200px) {
+                margin-top: 0px;
+            }
 
-            outline: none;
-            font-family: "Inter";
-            font-size: 16px;
-            font-weight: normal;
-            line-height: 16px;
-            font-style: normal;
-            text-align: left;
-            color: rgba(25,25,25,0.5 );
+            input {
+                background: #ffffff;
+                margin-right: 16px;
+                
+                width: 308px;
+                height: 56px;
+                border-radius: 40px;
+                border: none;
+                padding-left: 15px;
+    
+                outline: none;
+                font-family: "Inter";
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 16px;
+                font-style: normal;
+                text-align: left;
+                color: rgba(25,25,25,0.5 );
+            }
+    
+            a {
+                display: inline-block;
+                width: 171px;
+            }
         }
 
-        a {
-            display: inline-block;
-            width: 171px;
-        }
+        
 
     }
 }
@@ -1146,5 +1183,98 @@ header{
 
 footer {
     background-color: #0E1021;
-    height: 513px;
+    height: 503px;
+
+
+
+    .container {
+
+        .footer-top {
+            margin-bottom: 100px;
+            padding-top: 114px;
+
+            display: grid;
+            // grid-template-columns: 3fr 1fr 2fr 2fr 2fr;
+            grid-template-columns: 5fr 2.5fr 3fr 3fr 3fr;
+            column-gap: 30px;
+            // align-items: center;
+            justify-items: end;
+
+            // grid-template-areas: "logo company help resources link";
+
+            p,
+            a {
+                font-family: "Inter";
+                font-size: 16px;
+                font-weight: normal;
+                line-height: 26px;
+                font-style: normal;
+                color: #92939B;
+            }
+
+            .logotype {
+
+                img {
+                    // padding-top: 100px;
+                    padding-bottom: 29px;
+                }
+    
+                p {
+                    
+                }
+            }
+
+            .footer-links {
+                display: flex;
+                flex-direction: column;
+                padding-top: 15px;
+
+                h3 {
+                    color: #FDFDFD;
+                    font-family: 'DM Sans', sans-serif;
+                    font-size: 22px;
+                    font-weight: bold;
+                    margin-bottom: 42px;
+                }
+                
+                a {
+                    text-decoration: none;
+                }                
+
+            }
+        }        
+    }
+
+    .footer-bottom {
+        border-top: 1px solid white;
+        
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+
+            .copyrights {
+            
+                p {
+                    color: RGBA(255,255,255,0.7 );
+                }
+            }
+    
+            .social-media {
+                
+                a {
+                    color: #FFFFFF;
+                    margin-left: 26px;
+    
+                    &:hover {
+                        color: #666666;
+                    }
+                }
+    
+                
+            }
+        }
+        
+    }
 }
