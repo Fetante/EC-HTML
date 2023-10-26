@@ -182,6 +182,18 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 
 .showcase-section {
   background-color: #F0EFE9;
+  position: relative;
+}
+.showcase-section .wavy-lines {
+  display: none;
+}
+@media (min-width: 1500px) {
+  .showcase-section .wavy-lines {
+    display: block;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+  }
 }
 .showcase-section .container {
   display: flex;
@@ -203,9 +215,14 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   }
 }
 .showcase-section .container .showcase-text h1 {
-  font-size: 90px;
+  font-size: 70px;
   font-weight: 700;
   font-family: "DM Sans", sans-serif;
+}
+@media (min-width: 405px) {
+  .showcase-section .container .showcase-text h1 {
+    font-size: 90px;
+  }
 }
 .showcase-section .container .showcase-text p {
   font-size: 20px;
@@ -235,6 +252,19 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
+}
+.brand-section .wavy-lines {
+  position: absolute;
+  top: 975px;
+  left: 365px;
+  z-index: 2;
+  display: none;
+}
+@media (min-width: 1900px) {
+  .brand-section .wavy-lines {
+    display: block;
+  }
 }
 .brand-section .brand-top {
   display: none;
@@ -411,43 +441,137 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 }
 .brand-section .brand-about.container {
   display: flex; /* Använd CSS Grid för att dela upp utrymmet */
-  padding-left: 56px;
-  padding-top: 120px;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 120px;
+  padding-bottom: 40px;
+}
+@media (min-width: 550px) {
+  .brand-section .brand-about.container {
+    padding-bottom: 140px;
+  }
+}
+@media (min-width: 1200px) {
+  .brand-section .brand-about.container {
+    justify-content: space-around;
+    flex-direction: row;
+  }
+}
+.brand-section .brand-about.container .founder-img-container {
+  display: flex;
+  position: relative;
+  width: 80vw;
+  z-index: 1;
+}
+@media (min-width: 625px) {
+  .brand-section .brand-about.container .founder-img-container {
+    width: 600px;
+    height: 615px;
+  }
+}
+@media (min-width: 992px) {
+  .brand-section .brand-about.container .founder-img-container {
+    padding-top: 0px;
+  }
+}
+.brand-section .brand-about.container .founder-img-container .founder-background {
+  position: absolute;
+  background-color: #BEEBFF;
+  width: 368px;
+  height: 180px;
+  bottom: 40px;
+  display: none;
+  z-index: 1;
+  padding: 30px 20px;
+}
+@media (min-width: 490px) {
+  .brand-section .brand-about.container .founder-img-container .founder-background {
+    display: block;
+    left: 15px;
+  }
+}
+@media (min-width: 670px) {
+  .brand-section .brand-about.container .founder-img-container .founder-background {
+    left: -56px;
+  }
+}
+.brand-section .brand-about.container .founder-img-container .founder-background h5 {
+  display: inline;
+  font-family: "DM Sans";
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 30px;
+  font-style: normal;
+}
+.brand-section .brand-about.container .founder-img-container .founder-background span {
+  color: #F94D1C;
+  font-family: "DM Sans";
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 30px;
+  font-style: normal;
+}
+.brand-section .brand-about.container .founder-img-container .founder-background p {
+  color: #586870;
+  margin-top: 15px;
+}
+.brand-section .brand-about.container .founder-img-container img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.brand-section .brand-about.container .section-title {
+  padding-left: 20px;
+  padding-top: 30px;
+  margin-right: 0px;
+  width: 80vw;
+}
+@media (min-width: 550px) {
+  .brand-section .brand-about.container .section-title {
+    width: 450px;
+    height: 615px;
+  }
 }
 @media (min-width: 1200px) {
   .brand-section .brand-about.container .section-title {
-    flex: 1;
     padding-top: 0px;
-    padding-left: 140px;
   }
 }
 .brand-section .brand-about.container .section-title h2 {
-  padding-bottom: 30px;
+  padding-bottom: 37px;
 }
 .brand-section .brand-about.container .section-title .no-title {
+  font-family: "Inter";
+  font-weight: normal;
   color: #A2A2A2;
+  font-size: 16px;
   padding-bottom: 45px;
+  line-height: 32px;
 }
-.brand-section .brand-about.container .section-title a {
-  margin-right: 35px;
+.brand-section .brand-about.container .section-title .video {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
 }
-.brand-section .brand-about.container .founder-img {
+.brand-section .brand-about.container .section-title .video .video-btn-container {
   display: none;
 }
-@media (min-width: 1200px) {
-  .brand-section .brand-about.container .founder-img {
-    display: contents;
-    flex: 1;
-    width: 100%; /* Säkerställ att bilden tar upp hela bredden av förälderelementet */
-    max-height: 600px; /* Ange höjden på diven */
+@media (min-width: 475px) {
+  .brand-section .brand-about.container .section-title .video .video-btn-container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: baseline;
   }
 }
-.brand-section .brand-about.container img {
-  width: 100%; /* Säkerställ att bilden tar upp hela bredden av diven */
-  max-width: 505px;
-  height: 100%; /* Säkerställ att bilden tar upp hela höjden av diven */
-  -o-object-fit: cover;
-     object-fit: cover; /* Fyll ut bilden utan att förvränga den */
+.brand-section .brand-about.container .section-title .video button {
+  margin-left: 45px;
+  display: inline-block;
+  margin-right: 10px;
+}
+.brand-section .brand-about.container .section-title .video .btn-theme {
+  padding: 16px 37px;
+  border-radius: 40px;
 }
 .brand-section .brand-about.container .about-company .play-btn {
   display: block;
@@ -461,26 +585,44 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   text-decoration: none;
   border-radius: 50%;
   font-size: 8px; /* Justera ikonens storlek efter behov */
-  margin-right: 10px;
-  margin-top: 35px;
-}
-@media (min-width: 416px) {
-  .brand-section .brand-about.container .about-company .play-btn {
-    display: inline-block;
-  }
-}
-.brand-section .brand-about.container .section-title {
-  padding-top: 0px;
+  margin-left: 0px;
 }
 
 .service-section {
   background-color: #F0EFE9;
+  padding-bottom: 40px;
+  position: relative;
+}
+.service-section .wavy-lines {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+@media (min-width: 850px) {
+  .service-section .wavy-lines {
+    display: block;
+  }
+}
+.service-section .container .section-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 90px;
+}
+@media (min-width: 1400px) {
+  .service-section .container .section-title {
+    width: 504px;
+    align-items: flex-start;
+  }
 }
 .service-section .container .card-content {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
   row-gap: 30px;
+  padding-bottom: 30px;
 }
 @media (min-width: 768px) {
   .service-section .container .card-content {
@@ -502,8 +644,20 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   max-width: 308px;
   height: 333px;
   background-color: #FFFFFF;
-  padding: 25px;
+  padding: 45px 25px;
   padding-bottom: 35px;
+  position: relative;
+}
+.service-section .container .card-content .card.active::after, .service-section .container .card-content .card.hover::after {
+  content: "";
+  position: absolute;
+  font-weight: 500;
+  height: 3px;
+  width: 40px;
+  background-color: #191919;
+  left: 20px;
+  top: 40px;
+  transform: translate(calc(50% - 15px));
 }
 .service-section .container .card-content .card p {
   font-size: 16px;
@@ -632,11 +786,16 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 .choose-section .container .choose-img-container .background-area-color {
   position: absolute;
   background-color: #F0EFE9;
-  height: 380px;
+  height: 200px;
   width: 100vh;
   top: 120px;
   left: -100px;
   z-index: 1;
+}
+@media (min-width: 500px) {
+  .choose-section .container .choose-img-container .background-area-color {
+    height: 300px;
+  }
 }
 @media (min-width: 1000px) {
   .choose-section .container .choose-img-container .background-area-color {
@@ -727,6 +886,12 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 
 .meet-team-section {
   background-color: #EDCF87;
+  margin-bottom: 50px;
+}
+@media (min-width: 450) {
+  .meet-team-section {
+    margin-bottom: 30px;
+  }
 }
 @media (min-width: 800px) {
   .meet-team-section {
@@ -928,7 +1093,13 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   }
 }
 .news-section .container .title-wrapper .section-title {
+  margin-top: 80px;
   padding: 0;
+}
+@media (min-width: 446px) {
+  .news-section .container .title-wrapper .section-title {
+    margin-top: 0px;
+  }
 }
 .news-section .container .title-wrapper .section-title h2 {
   padding-bottom: 40px;
@@ -993,9 +1164,21 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 }
 
 .signup-section {
+  position: relative;
   background-color: #F0EFE9;
   padding-top: 110px;
   padding-bottom: 110px;
+}
+.signup-section .wavy-lines {
+  display: none;
+  position: absolute;
+  bottom: 60px;
+  right: 0px;
+}
+@media (min-width: 850px) {
+  .signup-section .wavy-lines {
+    display: block;
+  }
 }
 .signup-section .container {
   display: flex;
@@ -1026,7 +1209,7 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 }
 .signup-section .container .subscribe input {
   background: #ffffff;
-  margin-right: 16px;
+  margin-left: 30px;
   margin-bottom: 30px;
   width: 308px;
   height: 56px;
@@ -1042,7 +1225,12 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   text-align: left;
   color: rgba(25, 25, 25, 0.5);
 }
-@media (min-width: 525px) {
+@media (min-width: 442px) {
+  .signup-section .container .subscribe input {
+    margin-right: 16px;
+  }
+}
+@media (min-width: 768px) {
   .signup-section .container .subscribe input {
     margin-bottom: 0px;
   }
@@ -1054,24 +1242,46 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 
 footer {
   background-color: #0E1021;
+  position: relative;
+}
+footer .wavy-lines {
+  display: none;
+  position: absolute;
+  bottom: 72px;
+  right: 0px;
+}
+@media (min-width: 850px) {
+  footer .wavy-lines {
+    display: block;
+  }
+}
+footer .container {
+  padding: 10px;
+}
+@media (min-width: 577px) {
+  footer .container {
+    padding: 0px;
+  }
 }
 footer .container .footer-top {
   margin-bottom: 100px;
   padding-top: 114px;
+  row-gap: 30px;
   -moz-column-gap: 30px;
        column-gap: 30px;
   display: grid;
-  grid-template-areas: ". logo logo ." ". company helpz ." ". resources link .";
+  grid-template-columns: 1fr;
+  grid-template-areas: "logo logo" "company company" "helpz helpz" "resources resources" "link link";
 }
 @media (min-width: 450px) {
   footer .container .footer-top {
-    grid-template-columns: 1fr;
-    grid-template-areas: "logo logo" "company company" "helpz helpz" "resources resources" "link link";
+    grid-template-areas: ". logo logo ." ". company helpz ." ". resources link .";
   }
 }
 @media (min-width: 768px) {
   footer .container .footer-top {
     grid-template-areas: ". logo logo ." "company helpz resources link";
+    row-gap: 0px;
   }
 }
 @media (min-width: 1000px) {
@@ -1124,16 +1334,24 @@ footer .container .footer-top .footer-links {
   display: flex;
   flex-direction: column;
   padding-top: 15px;
+  margin-top: 10px;
 }
 footer .container .footer-top .footer-links h3 {
   color: #FDFDFD;
   font-family: "DM Sans", sans-serif;
   font-size: 22px;
   font-weight: bold;
-  margin-bottom: 42px;
+  margin-bottom: 0px;
+}
+@media (min-width: 768px) {
+  footer .container .footer-top .footer-links h3 {
+    margin-bottom: 15px;
+  }
 }
 footer .container .footer-top .footer-links a {
   text-decoration: none;
+  display: block;
+  margin-top: 15px;
 }
 footer .footer-bottom {
   border-top: 1px solid white;

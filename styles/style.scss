@@ -214,8 +214,19 @@ header{
 
 .showcase-section {
     background-color: #F0EFE9;
+    position: relative;
     // border: 1px solid #F9D783;
     
+    .wavy-lines {        
+        display: none;
+
+        @media (min-width: 1500px) {
+            display:block;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+    }
     .container {
         // border: 1px solid black;
         display: flex;
@@ -242,9 +253,13 @@ header{
             
 
             h1 {
-                font-size: 90px;
+                font-size: 70px;
                 font-weight: 700;
                 font-family: 'DM Sans', sans-serif;
+
+                @media (min-width: 405px) {
+                    font-size: 90px;
+                }
             }
 
             p {
@@ -288,6 +303,21 @@ header{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    .wavy-lines {
+        position: absolute;
+        top: 975px;
+        left: 365px;
+        z-index: 2;
+        display: none;
+
+        @media (min-width: 1900px) {
+            display: block;
+        }
+    }
+
+   
 
     .brand-top {
         // border: 1px solid black;        
@@ -493,58 +523,147 @@ header{
 
     .brand-about.container {
         display: flex; /* Använd CSS Grid för att dela upp utrymmet */
+        flex-direction: column;
+        align-items: center;
+        margin-top: 120px;
+        padding-bottom: 40px;
+
+        @media (min-width: 550px) {
+            padding-bottom: 140px;
+        }
+       
+
+        @media (min-width:1200px) {
+            justify-content: space-around;
+            flex-direction: row;            
+        }
         
-        // border: 1px solid black;
-        padding-left: 56px;
-        padding-top: 120px;
+        
+        .founder-img-container {
+            // border: 1px solid green;
+            display: flex;
+            position: relative;
+            width: 80vw;
+            z-index: 1;
+
+            @media (min-width: 625px) {
+                width: 600px;
+                height: 615px;
+            }
+            @media (min-width: 992px) {
+                padding-top: 0px;
+            }         
+
+            .founder-background {
+                position: absolute;
+                background-color: #BEEBFF;
+                width: 368px;
+                height: 180px;
+                bottom: 40px;
+               display:none;
+               z-index: 1;
+                
+                padding: 30px 20px;
+
+                @media (min-width: 490px) {
+                    display: block;
+                    left: 15px;
+                }
+                @media (min-width: 670px) {
+                    left: -56px;
+                }
+                
+                h5 {
+                    display: inline;
+                    font-family: "DM Sans";
+                    font-size: 20px;
+                    font-weight: bold;
+                    line-height: 30px;
+                    font-style: normal;                    
+                }
+
+                span {
+                    color: #F94D1C;
+                    font-family: "DM Sans";
+                    font-size: 16px;
+                    font-weight: bold;
+                    line-height: 30px;
+                    font-style: normal; 
+                }
+
+                p {
+                    color: #586870;
+                    margin-top: 15px;
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
 
         .section-title {
-           
-            
-            @media (min-width: 1200px) {
-                flex: 1;
-                padding-top: 0px;
-                padding-left: 140px;
+            padding-left: 20px;
+            padding-top: 30px;
+            margin-right: 0px;
+            width: 80vw;
+
+            @media (min-width: 550px) {
+                width: 450px;
+                height: 615px;
             }
-            
+
+            @media (min-width: 1200px) {
+                padding-top: 0px;
+            }          
 
             h2 {
-                padding-bottom: 30px;
+                padding-bottom: 37px;
             }
-           
-           
             .no-title {
+                font-family: "Inter";
+                font-weight: normal;
                 color:#A2A2A2;
+                font-size: 16px;
                 padding-bottom: 45px;
+                line-height: 32px;
             }
 
-            a {
-                margin-right: 35px;
-            }
+            .video {
+                display: flex;
+                justify-content: flex-start;
+                align-items: baseline;                    
+            
+                
+                .video-btn-container {
+                    display: none;
+
+                @media (min-width: 475px) {
+                    
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: baseline;                    
+                }
+                }
+
+                button {
+                    margin-left: 45px;
+                    display: inline-block;
+                    margin-right: 10px;
+                }
+                
+
+                .btn-theme {
+                    padding: 16px 37px;
+                    border-radius: 40px;
+                }
+            }           
         }
 
-        .founder-img {
-            display: none;
-
-            @media (min-width: 1200px) {
-                display: contents;
-                flex: 1;
-                width: 100%; /* Säkerställ att bilden tar upp hela bredden av förälderelementet */
-                max-height: 600px; /* Ange höjden på diven */
-            }
-            
-        }
-
-        img {
-            width: 100%; /* Säkerställ att bilden tar upp hela bredden av diven */
-            max-width: 505px;
-            height: 100%; /* Säkerställ att bilden tar upp hela höjden av diven */
-            object-fit: cover; /* Fyll ut bilden utan att förvränga den */
+        .about-company {    
             
             
-        }
-
-        .about-company {            
 
             .play-btn {
                 display: block;
@@ -558,40 +677,58 @@ header{
                 text-decoration: none;
                 border-radius: 50%;
                 font-size: 8px; /* Justera ikonens storlek efter behov */
-                margin-right: 10px;
-                margin-top: 35px;
+                margin-left: 0px;
+                
 
-                @media (min-width: 416px) {
-                    display: inline-block;
-                    
-                }
+               
                 
             }
         }
     }
     
 
-.brand-about.container .section-title {
-    padding-top: 0px;
-}
     
 }
 
 
 .service-section {
     background-color: #F0EFE9;
+    padding-bottom: 40px;
+    position: relative;
 
+    .wavy-lines {
+        display: none;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+
+        @media (min-width: 850px) {
+            display: block;
+        }
+        
+    }
     .container {
 
         .section-title {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            //width: 504px;
+            padding-bottom: 90px;
 
+            @media (min-width: 1400px) {
+                width: 504px;
+                align-items: flex-start;
+            }
         }
 
         .card-content {
             display: grid;
             grid-template-columns: 1fr;
-           justify-items: center;
+            justify-items: center;
             row-gap: 30px;
+            padding-bottom: 30px;
 
             @media (min-width:768px) {
                 grid-template-columns: 1fr 1fr;
@@ -610,8 +747,23 @@ header{
                 max-width: 308px;
                 height: 333px;                
                 background-color: #FFFFFF;
-                padding: 25px;
+                padding: 45px 25px;
                 padding-bottom: 35px;
+
+                position: relative;
+
+                &.active::after,
+                &.hover::after {
+                    content: '';
+                    position: absolute;
+                    font-weight: 500;
+                    height: 3px;
+                    width: 40px;
+                    background-color: #191919;
+                    left: 20px;
+                    top: 40px;
+                    transform: translate(calc(50% - 15px));
+                }         
 
                 p {
                     font-size: 16px;
@@ -782,13 +934,17 @@ header{
             .background-area-color {
                 position: absolute;
                 background-color: #F0EFE9;
-                height: 380px;
+                height: 200px;
                 
                 width: 100vh;
                 
                 top: 120px;
                 left: -100px;
                 z-index: 1;
+
+                @media (min-width: 500px) {
+                    height: 300px;
+                }
 
                 @media (min-width: 1000px) {
                     left: -50px;
@@ -901,6 +1057,13 @@ header{
 
     background-color: #EDCF87;
 
+    margin-bottom: 50px;
+
+
+
+    @media (min-width: 450) {
+        margin-bottom: 30px;
+    }
     @media (min-width: 800px) {
         padding-bottom: 150px;
     }
@@ -1143,7 +1306,10 @@ header{
             }
 
             .section-title {
-
+                margin-top: 80px;
+                @media (min-width: 446px) {
+                    margin-top: 0px;
+                }
                 h2 {
                     padding-bottom: 40px;
                 }
@@ -1232,11 +1398,21 @@ header{
 }
 
 .signup-section {
-
+    position: relative;
     background-color: #F0EFE9;
     padding-top: 110px;
     padding-bottom: 110px;
 
+    .wavy-lines {
+        display: none;
+        position: absolute;
+        bottom: 60px;
+        right: 0px;
+
+        @media (min-width: 850px) {
+            display: block;
+        }
+    }
     .container {
         display: flex;
         justify-content: space-between;
@@ -1262,14 +1438,20 @@ header{
             margin-top: 30px;
             margin-right: 77px;
             text-align: center;
+            
             @media (min-width: 1200px) {
                 margin-top: 0px;
             }
 
             input {
                 background: #ffffff;
-                margin-right: 16px;
+                margin-left: 30px;
                 margin-bottom: 30px;
+
+                @media (min-width: 442px) {
+                    margin-right: 16px;
+                }
+               
                 width: 308px;
                 height: 56px;
                 border-radius: 40px;
@@ -1285,7 +1467,7 @@ header{
                 text-align: left;
                 color: rgba(25,25,25,0.5 );
 
-                @media (min-width: 525px) {
+                @media (min-width: 768px) {
                     margin-bottom: 0px;
                 }
             }
@@ -1307,35 +1489,56 @@ header{
 footer {
     background-color: #0E1021;
     // height: 503px;
+    position: relative;
+
+        .wavy-lines {
+            display: none;
+            position: absolute;
+            bottom: 72px;
+            right: 0px;
+
+            @media (min-width: 850px) {
+                display: block;
+            }
+        }
 
 
 
     .container {
+        padding: 10px;
+        
+
+        @media (min-width: 577px) {
+            padding: 0px;
+        }
 
         .footer-top {
             margin-bottom: 100px;
             padding-top: 114px;
-
+            row-gap: 30px;
             column-gap: 30px;            
-
-            display: grid;
             
-            grid-template-areas:    ". logo logo ." 
-                                    ". company helpz ."
-                                    ". resources link .";
+            display: grid;
+
+            grid-template-columns: 1fr;
+            grid-template-areas:    "logo logo" 
+                                    "company company" 
+                                    "helpz helpz" 
+                                    "resources resources" 
+                                    "link link";
+            
+            
 
             @media (min-width: 450px) {
-
-                grid-template-columns: 1fr;
-                grid-template-areas:    "logo logo" 
-                                        "company company" 
-                                        "helpz helpz" 
-                                        "resources resources" 
-                                        "link link";
+                grid-template-areas:    ". logo logo ." 
+                                        ". company helpz ."
+                                        ". resources link .";
+               
             }
             @media (min-width: 768px) {
                 grid-template-areas:    ". logo logo ." 
                                         "company helpz resources link";
+                row-gap: 0px;
             }
 
             @media (min-width: 1000px) {
@@ -1352,7 +1555,7 @@ footer {
                 justify-items: end;
             }
 
-
+           
             p,
             a {
                 font-family: "Inter";
@@ -1402,17 +1605,25 @@ footer {
                 display: flex;
                 flex-direction: column;
                 padding-top: 15px;
+                margin-top: 10px;
 
                 h3 {
                     color: #FDFDFD;
                     font-family: 'DM Sans', sans-serif;
                     font-size: 22px;
                     font-weight: bold;
-                    margin-bottom: 42px;
+                    margin-bottom: 0px;
+
+                    @media (min-width: 768px) {
+                        margin-bottom: 15px;
+                    }
+                    
                 }
                 
                 a {
                     text-decoration: none;
+                    display: block;
+                    margin-top: 15px;
                 }                
 
             }
@@ -1421,7 +1632,7 @@ footer {
 
     .footer-bottom {
         border-top: 1px solid white;
-        
+      
 
         .container {
             display: flex;
