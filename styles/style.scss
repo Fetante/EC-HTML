@@ -1051,6 +1051,7 @@ header{
 
     .container {
 
+        padding: 0px;
 
         .title-wrapper {
             display: flex;
@@ -1073,11 +1074,8 @@ header{
                 h2 {
                     padding-bottom: 40px;
                 }
-                
-               
-                padding: 0;
 
-                
+                padding: 0;
             }
            
         }
@@ -1142,7 +1140,8 @@ header{
 
         .subscribe {
             margin-top: 30px;
-            
+            margin-right: 77px;
+            text-align: center;
             @media (min-width: 1200px) {
                 margin-top: 0px;
             }
@@ -1150,7 +1149,7 @@ header{
             input {
                 background: #ffffff;
                 margin-right: 16px;
-                
+                margin-bottom: 30px;
                 width: 308px;
                 height: 56px;
                 border-radius: 40px;
@@ -1165,6 +1164,10 @@ header{
                 font-style: normal;
                 text-align: left;
                 color: rgba(25,25,25,0.5 );
+
+                @media (min-width: 525px) {
+                    margin-bottom: 0px;
+                }
             }
     
             a {
@@ -1183,7 +1186,7 @@ header{
 
 footer {
     background-color: #0E1021;
-    height: 503px;
+    // height: 503px;
 
 
 
@@ -1193,14 +1196,42 @@ footer {
             margin-bottom: 100px;
             padding-top: 114px;
 
-            display: grid;
-            // grid-template-columns: 3fr 1fr 2fr 2fr 2fr;
-            grid-template-columns: 5fr 2.5fr 3fr 3fr 3fr;
-            column-gap: 30px;
-            // align-items: center;
-            justify-items: end;
+            column-gap: 30px;            
 
-            // grid-template-areas: "logo company help resources link";
+            display: grid;
+            
+            grid-template-areas:    ". logo logo ." 
+                                    ". company helpz ."
+                                    ". resources link .";
+
+            @media (min-width: 450px) {
+
+                grid-template-columns: 1fr;
+                grid-template-areas:    "logo logo" 
+                                        "company company" 
+                                        "helpz helpz" 
+                                        "resources resources" 
+                                        "link link";
+            }
+            @media (min-width: 768px) {
+                grid-template-areas:    ". logo logo ." 
+                                        "company helpz resources link";
+            }
+
+            @media (min-width: 1000px) {
+                grid-template-areas:    ". logo logo ." 
+                                        "company helpz resources link";
+                justify-items: center;
+            }
+
+
+
+            @media (min-width: 1200px) {
+                grid-template-columns: 5fr 2.5fr 3fr 3fr 3fr;
+                grid-template-areas: "logo company helpz resources link";
+                justify-items: end;
+            }
+
 
             p,
             a {
@@ -1213,15 +1244,38 @@ footer {
             }
 
             .logotype {
+                grid-area: logo;
+                padding-bottom: 30px;
 
+                @media (min-width: 1000px) {
+                    padding-bottom: 0px;
+                }
                 img {
                     // padding-top: 100px;
                     padding-bottom: 29px;
+                  
+
                 }
     
                 p {
                     
                 }
+            }
+
+            .company {
+                grid-area: company;
+            }
+
+            .help {
+                grid-area: helpz;
+            }
+
+            .resources {
+                grid-area: resources;
+            }
+
+            .link {
+                grid-area: link;
             }
 
             .footer-links {
@@ -1252,7 +1306,8 @@ footer {
         .container {
             display: flex;
             justify-content: space-between;
-            margin-top: 30px;
+            padding-top: 30px;
+            
 
             .copyrights {
             
@@ -1262,17 +1317,16 @@ footer {
             }
     
             .social-media {
-                
-                a {
+                align-items: end;
+                a {                    
                     color: #FFFFFF;
                     margin-left: 26px;
+                    margin-bottom: 10px;
     
                     &:hover {
                         color: #666666;
                     }
                 }
-    
-                
             }
         }
         

@@ -855,6 +855,9 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   background-color: #FFFFFF;
   height: 852px;
 }
+.news-section .container {
+  padding: 0px;
+}
 .news-section .container .title-wrapper {
   display: flex;
   flex-direction: column;
@@ -921,6 +924,8 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 }
 .signup-section .container .subscribe {
   margin-top: 30px;
+  margin-right: 77px;
+  text-align: center;
 }
 @media (min-width: 1200px) {
   .signup-section .container .subscribe {
@@ -930,6 +935,7 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 .signup-section .container .subscribe input {
   background: #ffffff;
   margin-right: 16px;
+  margin-bottom: 30px;
   width: 308px;
   height: 56px;
   border-radius: 40px;
@@ -944,6 +950,11 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
   text-align: left;
   color: rgba(25, 25, 25, 0.5);
 }
+@media (min-width: 525px) {
+  .signup-section .container .subscribe input {
+    margin-bottom: 0px;
+  }
+}
 .signup-section .container .subscribe a {
   display: inline-block;
   width: 171px;
@@ -951,16 +962,38 @@ header .main-menu nav a.active::after, header .main-menu nav a.hover::after {
 
 footer {
   background-color: #0E1021;
-  height: 503px;
 }
 footer .container .footer-top {
   margin-bottom: 100px;
   padding-top: 114px;
-  display: grid;
-  grid-template-columns: 5fr 2.5fr 3fr 3fr 3fr;
   -moz-column-gap: 30px;
        column-gap: 30px;
-  justify-items: end;
+  display: grid;
+  grid-template-areas: ". logo logo ." ". company helpz ." ". resources link .";
+}
+@media (min-width: 450px) {
+  footer .container .footer-top {
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo logo" "company company" "helpz helpz" "resources resources" "link link";
+  }
+}
+@media (min-width: 768px) {
+  footer .container .footer-top {
+    grid-template-areas: ". logo logo ." "company helpz resources link";
+  }
+}
+@media (min-width: 1000px) {
+  footer .container .footer-top {
+    grid-template-areas: ". logo logo ." "company helpz resources link";
+    justify-items: center;
+  }
+}
+@media (min-width: 1200px) {
+  footer .container .footer-top {
+    grid-template-columns: 5fr 2.5fr 3fr 3fr 3fr;
+    grid-template-areas: "logo company helpz resources link";
+    justify-items: end;
+  }
 }
 footer .container .footer-top p,
 footer .container .footer-top a {
@@ -971,8 +1004,29 @@ footer .container .footer-top a {
   font-style: normal;
   color: #92939B;
 }
+footer .container .footer-top .logotype {
+  grid-area: logo;
+  padding-bottom: 30px;
+}
+@media (min-width: 1000px) {
+  footer .container .footer-top .logotype {
+    padding-bottom: 0px;
+  }
+}
 footer .container .footer-top .logotype img {
   padding-bottom: 29px;
+}
+footer .container .footer-top .company {
+  grid-area: company;
+}
+footer .container .footer-top .help {
+  grid-area: helpz;
+}
+footer .container .footer-top .resources {
+  grid-area: resources;
+}
+footer .container .footer-top .link {
+  grid-area: link;
 }
 footer .container .footer-top .footer-links {
   display: flex;
@@ -995,14 +1049,18 @@ footer .footer-bottom {
 footer .footer-bottom .container {
   display: flex;
   justify-content: space-between;
-  margin-top: 30px;
+  padding-top: 30px;
 }
 footer .footer-bottom .container .copyrights p {
   color: RGBA(255, 255, 255, 0.7);
 }
+footer .footer-bottom .container .social-media {
+  align-items: end;
+}
 footer .footer-bottom .container .social-media a {
   color: #FFFFFF;
   margin-left: 26px;
+  margin-bottom: 10px;
 }
 footer .footer-bottom .container .social-media a:hover {
   color: #666666;
