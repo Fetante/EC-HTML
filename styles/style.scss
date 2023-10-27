@@ -1666,22 +1666,99 @@ footer {
 
 // Contact Page
 
+.connect-showcase-section {
+
+    .lets-connect {
+        background-color:#F0EFE9;
+        height: 300px;
+        position: relative;
+        
+
+        .wavy-lines {
+            position: absolute;
+            bottom: 0px;
+        }
+    }
+
+    .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        h1 {
+            font-family: "DM Sans";
+            font-size: 56px;
+            font-weight: bold;
+            line-height: 64px;
+            font-style: normal;
+            text-align: center;  
+        }
+
+        a {
+            text-decoration: none;
+            color: #191919;
+        }
+    }
+}
 
 .contact-us-section {
     
     .container {
+        padding: 0;
 
+       
 
         .card-container {
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             margin-top: 120px;
+            margin-bottom: 80px;
+
 
             .card {
                 width: 420px;
                 height: 206px;
-                padding: 25px;
-                border: 1px solid grey;
+                padding: 48px 60px;
+                border: 1px solid rgb(236, 232, 232);
+                border-radius: 0%;
+                display: flex;
+                flex-direction: row;
+
+                i {
+                    background-color: #191919;
+                    color: #ffffff;
+                    font-size: 24px;
+                    width: 60px;
+                    height: 60px;
+                    border-radius: 50%;
+                    text-align: center;
+                    line-height: 60px;
+                    display: inline-block; /* Placera bredvid h3 */
+                    vertical-align: middle; /* För att centrera vertikalt */
+                    margin-right: 25px;
+                  }
+                  
+                  h3 {
+                    font-family: "DM Sans";
+                    font-size: 22px;
+                    font-weight: bold;
+                    line-height: 33px;
+                    font-style: normal;
+                    display: inline-block; /* Placera bredvid i */
+                    vertical-align: middle; /* För att centrera vertikalt */
+                    // margin-left: 10px; /* Skapa avstånd mellan i och h3 */
+                  }
+
+                  p {
+                    margin-bottom: 0px;
+                  }
+
+            
+                .card-contacts {
+                    padding-top: 6px;
+                }
             }
         }
 
@@ -1689,10 +1766,54 @@ footer {
             width: 1320px;
             height: 766px;
             background-color: #F0EFE9;
+            text-align: center;
+            padding-top: 124px;
+            padding-bottom: 100px; 
 
             form { 
                 display: flex;
-                flex-direction: column;
+                flex-direction: column;                
+
+                input,
+                textarea {
+                    display: block;
+                    border-radius: 40px;
+                    border: 1px solid #ffffff;
+                    outline: none;                    
+                    margin: 0 auto 16px;
+                    padding-left: 36px;
+                    padding-top: 10px;
+                    padding-bottom: 5px;
+                    width: 77%;
+                }
+
+                textarea {                    
+                    height: 160px;
+                    margin-bottom: 44px;
+                }
+
+                h2 {                    
+                    font-family: "DM Sans";
+                    font-size: 45px;
+                    font-weight: bold;
+                    line-height: 55px;
+                    font-style: normal;
+                    text-align: center;
+                    padding-bottom: 32px;
+                    width: 33%;
+                    margin: 0 auto;
+                }
+
+                button {
+                    display: block;
+                    border-radius: 40px;                    
+                    margin: auto;
+                    width: 77%;
+                    height: 56px;
+                }
+
+
+
             }
           
 

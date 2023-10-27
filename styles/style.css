@@ -1376,23 +1376,124 @@ footer .footer-bottom .container .social-media a:hover {
   color: #666666;
 }
 
+.connect-showcase-section .lets-connect {
+  background-color: #F0EFE9;
+  height: 300px;
+  position: relative;
+}
+.connect-showcase-section .lets-connect .wavy-lines {
+  position: absolute;
+  bottom: 0px;
+}
+.connect-showcase-section .container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.connect-showcase-section .container h1 {
+  font-family: "DM Sans";
+  font-size: 56px;
+  font-weight: bold;
+  line-height: 64px;
+  font-style: normal;
+  text-align: center;
+}
+.connect-showcase-section .container a {
+  text-decoration: none;
+  color: #191919;
+}
+
+.contact-us-section .container {
+  padding: 0;
+}
 .contact-us-section .container .card-container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   margin-top: 120px;
+  margin-bottom: 80px;
 }
 .contact-us-section .container .card-container .card {
   width: 420px;
   height: 206px;
-  padding: 25px;
-  border: 1px solid grey;
+  padding: 48px 60px;
+  border: 1px solid rgb(236, 232, 232);
+  border-radius: 0%;
+  display: flex;
+  flex-direction: row;
+}
+.contact-us-section .container .card-container .card i {
+  background-color: #191919;
+  color: #ffffff;
+  font-size: 24px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 60px;
+  display: inline-block; /* Placera bredvid h3 */
+  vertical-align: middle; /* För att centrera vertikalt */
+  margin-right: 25px;
+}
+.contact-us-section .container .card-container .card h3 {
+  font-family: "DM Sans";
+  font-size: 22px;
+  font-weight: bold;
+  line-height: 33px;
+  font-style: normal;
+  display: inline-block; /* Placera bredvid i */
+  vertical-align: middle; /* För att centrera vertikalt */
+}
+.contact-us-section .container .card-container .card p {
+  margin-bottom: 0px;
+}
+.contact-us-section .container .card-container .card .card-contacts {
+  padding-top: 6px;
 }
 .contact-us-section .container .form-contact {
   width: 1320px;
   height: 766px;
   background-color: #F0EFE9;
+  text-align: center;
+  padding-top: 124px;
+  padding-bottom: 100px;
 }
 .contact-us-section .container .form-contact form {
   display: flex;
   flex-direction: column;
+}
+.contact-us-section .container .form-contact form input,
+.contact-us-section .container .form-contact form textarea {
+  display: block;
+  border-radius: 40px;
+  border: 1px solid #ffffff;
+  outline: none;
+  margin: 0 auto 16px;
+  padding-left: 36px;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  width: 77%;
+}
+.contact-us-section .container .form-contact form textarea {
+  height: 160px;
+  margin-bottom: 44px;
+}
+.contact-us-section .container .form-contact form h2 {
+  font-family: "DM Sans";
+  font-size: 45px;
+  font-weight: bold;
+  line-height: 55px;
+  font-style: normal;
+  text-align: center;
+  padding-bottom: 32px;
+  width: 33%;
+  margin: 0 auto;
+}
+.contact-us-section .container .form-contact form button {
+  display: block;
+  border-radius: 40px;
+  margin: auto;
+  width: 77%;
+  height: 56px;
 }/*# sourceMappingURL=style.css.map */
