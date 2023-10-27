@@ -1374,4 +1374,25 @@ footer .footer-bottom .container .social-media a {
 }
 footer .footer-bottom .container .social-media a:hover {
   color: #666666;
+}
+
+.contact-us-section .container .card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 120px;
+}
+.contact-us-section .container .card-container .card {
+  width: 420px;
+  height: 206px;
+  padding: 25px;
+  border: 1px solid grey;
+}
+.contact-us-section .container .form-contact {
+  width: 1320px;
+  height: 766px;
+  background-color: #F0EFE9;
+}
+.contact-us-section .container .form-contact form {
+  display: flex;
+  flex-direction: column;
 }/*# sourceMappingURL=style.css.map */
